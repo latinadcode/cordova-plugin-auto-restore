@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-auto-restore"
+        version="0.0.1">
+
+    <name>AutoRestore</name>
+
+    <description>An Android Cordova plugin that restore (bright back on top, or reopen) the aplication each x seconds.</description>
+
+    <license>MIT</license>
+    <keywords>cordova,android,restore,reopen</keywords>
+    <repo>https://github.com/LatinAdCode/cordova-plugin-auto-restore.git</repo>
+    <issue>https://github.com/LatinAdCode/cordova-plugin-auto-restore/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/auto-restore.js" name="AutoRestore">
+        <clobbers target="cordova.plugins.autoRestore" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AutoRestore">
+                <param name="android-package" value="com.latinad.cordova.plugin.AutoRestore"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+            <uses-permission android:name="android.permission.GET_TASKS" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="application">
+            <service
+                android:name="com.latinad.cordova.plugin.AutoRestoreService"
+                android:clearTaskOnLaunch="true"
+                android:enabled="true"
+                android:excludeFromRecents="true"
+                android:launchMode="singleInstance"
+            />
+        </config-file>
+
+        <source-file src="src/android/AutoRestore.java" target-dir="src/com/latinad/cordova/plugin" />
+        <source-file src="src/android/AutoRestoreService.java" target-dir="src/com/latinad/cordova/plugin" />
+    </platform>
+</plugin>

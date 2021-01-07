@@ -1,0 +1,33 @@
+{
+    "name": "cordova-plugin-auto-restore",
+    "version": "0.0.1",
+    "description": "An Android Cordova plugin that restore (bright back on top, or reopen) the application each x seconds.",
+    "cordova": {
+      "id": "cordova-plugin-auto-restore",
+      "platforms": [
+        "android"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/LatinAdCode/cordova-plugin-auto-restore.git"
+    },
+    "keywords": [
+      "Restore",
+      "Reopen",
+      "ecosystem:cordova",
+      "cordova-android"
+    ],
+    "engines": [
+      {
+        "name": "cordova",
+        "version": ">=3.0.0"
+      }
+    ],
+    "author": "Santiago Meli <santiagomeli@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/LatinAdCode/cordova-plugin-auto-restore/issues"
+    },
+    "homepage": "https://github.com/LatinAdCode/cordova-plugin-auto-restore"
+  }
