@@ -110,8 +110,8 @@ public class AutoRestoreService extends Service {
         TimerTask task = new TimerTask() {
             public void run() {
                 Date currentTime = Calendar.getInstance().getTime();
-                Log.d("MonitorDebug", "SIGO VIVO! " + currentTime );
-                Log.d("MonitorDebug", "Restaurando Player...");
+                // Log.d("MonitorDebug", "I'm still alive! " + currentTime );
+                // Log.d("MonitorDebug", "Restoring...");
 
                 String mainPackageName = getApplicationContext().getPackageName();
                 String activityToStart = mainPackageName + ".MainActivity";
@@ -130,8 +130,8 @@ public class AutoRestoreService extends Service {
                 }
             }
         };
-        //schedule the timer, to wake up every 1 second
+        //schedule the timer, to wake up every 20 seconds
         Timer timer = new Timer();
-        timer.schedule(task, 10000, 10000);
+        timer.schedule(task, 20000, 20000);
     }
 }
